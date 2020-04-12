@@ -1,6 +1,5 @@
-//www.elegoo.com
 
-//     Right motor truth table
+//     Left motor truth table
 //Here are some handy tables to show the various modes of operation.
 //  ENB         IN3             IN4         Description  
 //  LOW   Not Applicable   Not Applicable   Motor is off
@@ -22,18 +21,18 @@ void setup() {
   digitalWrite(ENB, HIGH);  //Enable right motor       
 }
 
-//mian loop
+//main loop
 void loop() {
   digitalWrite(IN3, LOW);      
-  digitalWrite(IN4, HIGH);//Right wheel turning forwards
+  digitalWrite(IN4, HIGH);//Left wheel turning forwards
   delay(500);             //delay 500ms
   digitalWrite(IN3, LOW);      
-  digitalWrite(IN4, LOW); //Right wheel stoped
+  digitalWrite(IN4, LOW); //Left wheel stoped
   delay(500);
   digitalWrite(IN3, HIGH);      
-  digitalWrite(IN4, LOW); //Right wheel turning backwards
+  digitalWrite(IN4, LOW); //Left wheel turning backwards
   delay(500);
   digitalWrite(IN3, HIGH);      
-  digitalWrite(IN4, HIGH); //Right wheel stoped
+  digitalWrite(IN4, HIGH); //Left wheel stoped
   delay(500);
 }
