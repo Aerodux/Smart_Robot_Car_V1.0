@@ -20,27 +20,60 @@ void setup() {
   digitalWrite(ENB, HIGH);
 }
 
-void right_forward() {
+void right_forward(int speed) {
+  
+  if (speed >=0 && speed<=255) {
+
+     analogWrite(ENA, speed);
+  }
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
 }
 
-void left_forward() {
+void left_forward(int speed) {
+
+  if (speed >=0 && speed<=255) {
+
+     analogWrite(ENB, speed);
+  }
+  
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
 }
 
-void right_backward() {
+void right_backward(int speed) {
+
+  if (speed >=0 && speed<=255) {
+
+     analogWrite(ENB, speed);
+  }
+  
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
 }
 
-void left_backward() {
+void left_backward(int speed) {
+
+  if (speed >=0 && speed<=255) {
+
+     analogWrite(ENB, speed);
+  }
+  
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
 }
 void loop() {
   // put your main code here, to run repeatedly:
- right_forward();
- left_backward();
+ right_forward(127);
+ left_forward(127);
+ delay(2000);
+ right_forward(150);
+ left_backward(150);
+ delay(850);
+ right_forward(127);
+ left_forward(127);
+ delay(2000);
+ left_forward(150);
+ right_backward(150);
+ delay(850);
 }
